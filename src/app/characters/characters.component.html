@@ -1,0 +1,15 @@
+<div class="row p-2 justify-content-center">
+  @for (character of characters; track $index) {
+  <div class="col-lg-4 col-md-1 mt-2 w-vw">
+    <div class="card">
+      <img src="{{ character.image }}" class="card-img-top h-32vh" />
+      <div class="card-body h-13vh">
+        <h5 class="card-title h-5vh">{{ character.name }}</h5>
+        <div class="d-flex justify-content-center align-self-end">
+          <button class="btn btn-warning card-button w-75">See more</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  }
+</div>
