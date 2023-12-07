@@ -1,0 +1,28 @@
+<div class="row me-2 ms-2">
+  @if (characters!==undefined) {
+    @for (character of characters; track $index) {
+      <div class="col-lg-3 col-md-6 col-sm-12 mt-2">
+        <div class="card h-100">
+          <img src="{{ character.image }}" class="card-img-top img-fluid" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title flex-grow-1">{{ character.name }}</h5>
+            <div class="mt-auto">
+              <a
+                [routerLink]="['./show', character.id]"
+                class="btn btn-warning card-button w-100"
+              >
+                See more
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+  } @else {
+    {{ espera }}
+  }
+</div>
+
+<ng-template [ngTemplateOutlet]="outlet" [ngOutletContext]="context" #espera>
+  <div id="spinner"></div>
+</ng-template>
